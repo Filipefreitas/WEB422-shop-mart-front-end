@@ -1,0 +1,96 @@
+/************* BASIC CONFIG *************/
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid #f00 !important;
+}
+
+body
+{
+    background-color:white;
+    color: darkgrey;
+    line-height: 1.7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+img
+{
+    width:100%;
+    max-width:100%;
+}
+
+h1,h2,h3
+{
+    margin-top: 10px;
+}
+
+.hide
+{ 
+    display:none;
+}
+
+.container
+{
+    width:1200px;
+    width:90%;
+}
+
+.vertical-center 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-center
+{
+    margin:0 auto;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.section-title
+{
+    text-align: left;
+    margin-left: 16px;
+}
+/************* END BASIC CONFIG *************/
+
+/************* GRIDS *************/
+.grid
+{
+    display: grid;
+}
+
+.grid-col-2
+{
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-col-3
+{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-col-3-2
+{
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.grid-col-4
+{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid-col-6
+{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+/************* END GRIDS *************/
