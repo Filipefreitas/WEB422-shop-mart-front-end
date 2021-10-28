@@ -1,24 +1,27 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import { FaSearch } from 'react-icons/fa';
 import SearchBox from "./SearchBox"
+import { FaSearch } from 'react-icons/fa';
+import logo from "../images/logo_header.png"
 
 import "../css/App.css"
 import "../css/utilities.css"
 
 const Header = (props) => {
     return (
-        <header className="container top-nav grid grid-col-3-2 horizontal-center">            
-            <div>
-                <p>Logo goes here</p>
+        <header className="container top-nav-container logo top-nav grid grid-col-3-2 horizontal-center">            
+            <div className="vertical-center">
+                <Link to="/"><img src={logo}></img></Link>
             </div>
-            <div>
-                <Link to="/products" className="top-nav">Products</Link>
-                <Link to="/registration" className="top-nav">Register</Link>
+            <div className="vertical-center">
+                <Link to="/products" className="top-nav-item no-decoration">Products</Link>
+                <Link to="/registration" className = "top-nav-item no-decoration">Sign Up</Link>
             </div>
-            <div>
-                <SearchBox addSearchState={props.addSearchState}/>
-                <FaSearch onClick={()=>{props.onToogleSearchBox()}}/>
+            <div className="search-container vertical-center">
+                    <SearchBox className = "left-alligned" 
+                        addSearchState={props.addSearchState} 
+                        onFilter={props.onFilter}/>
+                    <FaSearch className= "icon right-alligned" onClick={()=>{props.onToogleSearchBox()}}/>
             </div>
         </header>
     )

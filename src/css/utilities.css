@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid #f00 !important;
+    /*border: 1px solid #f00 !important;*/
 }
 
 body
@@ -36,7 +36,7 @@ h1,h2,h3
 .container
 {
     width:1200px;
-    width:90%;
+    width:100%;
 }
 
 .vertical-center 
@@ -51,6 +51,18 @@ h1,h2,h3
     margin:0 auto;
 }
 
+.right-alligned
+{
+    margin-left: auto; 
+    margin-right: 20%;
+}
+
+.left-alligned
+{
+    margin-left: 5%; 
+    margin-right: auto;
+}
+
 .bold
 {
     font-weight: bold;
@@ -60,6 +72,13 @@ h1,h2,h3
 {
     text-align: left;
     margin-left: 16px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.no-decoration
+{
+    text-decoration: none;
 }
 /************* END BASIC CONFIG *************/
 

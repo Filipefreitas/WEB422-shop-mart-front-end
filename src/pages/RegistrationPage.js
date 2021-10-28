@@ -14,7 +14,7 @@ const RegistrationPage = (props) =>
         <div>
             <Header onToogleSearchBox={toogleSearchBox} addSearchState={addSearchState}/>
             <main>
-                <h2>Registration page</h2>
+            <h3 className="section-title">Registration</h3>
             </main>
             <Footer/>
         </div>

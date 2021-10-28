@@ -4,17 +4,12 @@ import Footer from "../components/Footer";
 import ProductList  from "../components/ProductList";
 
 const ProductsPage = (props) => 
-{
-    const [addSearchState, setAddSearchState] = useState(false);
-    const toogleSearchBox = ()=>{
-    setAddSearchState(!addSearchState)
-    }
-  
+{  
     return (
         <div>
-            <Header onToogleSearchBox={toogleSearchBox} addSearchState={addSearchState}/>
+            <Header onToogleSearchBox={props.onToogleSearchBox} addSearchState={props.addSearchState}/>
             <main>
-                <h2>All Products</h2>
+                <h3 className="section-title">All Products</h3>
                 <ProductList products={props.products}/>
             </main>
             <Footer/>
