@@ -1,17 +1,17 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 const ProductItemCard = (props) => {
     
     return (
         <div className = "item-card">
-            <img src={props.srcImg} alt={props.title}/>   
+            <Link to = {`/product/details/${props.id}`}> 
+                <img src={props.srcImg} alt={props.title}/>   
+            </Link> 
+
             <div className = "item-content">
-                <p className="bold">
-                    {props.name}
-                </p>
-                <p>
-                    $ {props.price}
-                </p>
+                <h3 className="bold"> {props.name} </h3>
+                <p>$ {props.price} </p>
             </div>
         </div>
     )

@@ -15,7 +15,7 @@ const Header = (props) => {
             </div>
             <div className="vertical-center">
                 <Link to="/products" className="top-nav-item no-decoration">Products</Link>
-                <Link to="/registration" className = "top-nav-item no-decoration">Sign Up</Link>
+                <Link to="/registration" className="top-nav-item no-decoration">Sign Up</Link>
             </div>
             <div className="search-container vertical-center">
                     <SearchBox className = "left-alligned" 

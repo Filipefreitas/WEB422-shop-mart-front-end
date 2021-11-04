@@ -26,11 +26,11 @@
   font-size: 1.4em;
 }
 
-/************* TOPNAV *************/
+/************* HEADER *************/
 .top-nav-container
 {
-    height: 100px;
-    background-color: rgba(237, 167, 144, 0.9);
+    height: 100%;
+    background-color: rgba(45, 102, 126, 0.8);
 }
 
 .top-nav-item
@@ -43,6 +43,39 @@
 {
   width: 75px;
 }
+
+/************* FOOTER *************/
+.container-footer-menu
+{
+  background-color: rgba(45, 102, 126, 0.8);
+}
+
+footer li
+{
+    display: inline-block;
+    padding: 16px 16px;
+    cursor: pointer;
+    font-size: 2em;
+}
+
+footer li:nth-child(1)
+{
+    padding-left: 0;
+}
+
+footer a 
+{
+    color:white;
+    text-transform: capitalize;
+    font-weight:600;
+}
+
+footer ul
+{
+    list-style-type: none;
+}
+
+
 /************* PRODUCT PAGE *************/
 .product-container
 {
@@ -95,6 +128,89 @@
     height: 100px;
     object-fit: contain;
     cursor: pointer ;
+}
+
+/************* PRODUCT DETAILS PAGE *************/
+#product-detail
+{
+  padding-left: 40px;
+}
+
+#product-detail > div
+{
+    margin-top:16px;
+    
+}
+
+#product-detail > div > img
+{
+    grid-column: 1;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+.product-description-content-area
+{
+    text-align: left;
+}
+
+
+/************* REGISTRATION FORM *************/
+.form-container
+{
+  margin-top: 200px;
+  width: 30%;
+}
+
+.form-control 
+{
+  margin-bottom:20px;
+}
+
+.form-control label
+{
+    display:block;
+    margin:8px 0;
+    color : black;
+}
+
+.form-control input[type="text"],.form-control input[type="password"]
+{
+    width:100%;
+    border: 2px solid black;
+    font-size:0.9rem;
+    padding:8px ;
+}   
+
+.form-control input[type="button"],
+.form-control input[type="submit"]
+{
+    background-color: #3498db;
+    color:#fff;
+    font-size:1rem;
+    width:100%;
+    display: block;
+    padding:8px 0px;
+    margin-top: 16px;
+    border:2px solid #3498db;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-control span
+{
+    color:#f00;
+    font-size: 0.8rem;
+}
+
+.error > span
+{
+    display:block;
+}
+
+.success > span
+{
+    display:none;
 }
 
 /************* HERO SLIDER *************/

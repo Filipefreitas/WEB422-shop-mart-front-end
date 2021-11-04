@@ -8,6 +8,7 @@ import {
 import HomePage from "../pages/HomePage";
 import ProductsPage from "../pages/ProductsPage";
 import RegistrationPage  from "../pages/RegistrationPage";
+import ProductDescriptionPage  from "../pages/ProductDescriptionPage";
 
 import "../css/App.css"
 import "../css/utilities.css"
@@ -39,16 +40,19 @@ const App = () => {
     
     let newProducts = [{}]
     
-    newProducts = products.filter((product)=>{
-        return product.name.includes(input);
-    })
-    
-    if(input === "")
+    if(input !== "")
     {
+      newProducts = products.filter((product)=>{
+        return product.name.includes(input);
+      })
+    }
+    else
+    {
+      //found out a way
     }    
 
     setProducts(newProducts);
-}
+  }
 
   return (
     <Router>
@@ -65,11 +69,15 @@ const App = () => {
         </Route>
 
         <Route exact path="/products">
-          <ProductsPage onToogleSearchBox={toogleSearchBox} addSearchState={addSearchState} products={products} setProducts={setProducts}/>
+          <ProductsPage onToogleSearchBox={toogleSearchBox} addSearchState={addSearchState} products={products} setProducts={setProducts} onFilter={filterProducts}/>
         </Route>
 
         <Route exact path="/registration">
-          <RegistrationPage onToogleSearchBox={toogleSearchBox} addSearchState={addSearchState}/>
+          <RegistrationPage onToogleSearchBox={toogleSearchBox} addSearchState={addSearchState} onFilter={filterProducts}/>
+        </Route>
+
+        <Route exact path= "/product/details/:id">
+          <ProductDescriptionPage onToogleSearchBox={toogleSearchBox} addSearchState={addSearchState} onFilter={filterProducts}/>   
         </Route>
     </Switch>
   </Router>
