@@ -10,9 +10,12 @@ const ProductDescriptionPage = (props) => {
     const [product, setProduct] = useState({
         name:"",
         srcImg:"",
+        category: {
+            categoryName: "",
+            categorySrcImg: ""
+        },
         description:"",
         price: 0
-
     })
 
     useEffect(()=>{
@@ -42,8 +45,10 @@ const ProductDescriptionPage = (props) => {
                             <h2>{product.name}</h2>
                             
                             <p>Unit price: ${product.price}</p>
-                            <p className="bold">Product Information</p>
+                            <p className="bold description-info">Product Information</p>
                             <p>{product.description}</p>
+                            <p className="bold description-info">Product category</p>
+                            <p>{product.category.categoryName}</p>
                         </div>
                     </div>
         

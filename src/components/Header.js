@@ -9,13 +9,13 @@ import "../css/utilities.css"
 
 const Header = (props) => {
     return (
-        <header className="container top-nav-container logo top-nav grid grid-col-3-2 horizontal-center">            
+        <header className="container top-nav-container logo top-nav grid grid-col-3-2 horizontal-center font-white">            
             <div className="vertical-center">
                 <Link to="/"><img src={logo}></img></Link>
             </div>
             <div className="vertical-center">
-                <Link to="/products" className="top-nav-item no-decoration">Products</Link>
-                <Link to="/registration" className="top-nav-item no-decoration">Sign Up</Link>
+                <Link to="/products" className="top-nav-item no-decoration font-white">Products</Link>
+                <Link to="/registration" className="top-nav-item no-decoration font-white">Sign Up</Link>
             </div>
             <div className="search-container vertical-center">
                     <SearchBox className = "left-alligned" 

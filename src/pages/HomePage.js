@@ -31,17 +31,6 @@ const HomePage = (props) =>
         }, []);
 
         useEffect(()=>{ 
-            fetch("http://localhost:4000/images")
-            .then(response=>response.json())
-            .then(json=>{
-                    props.setCategoriesSrcImg(json.data)
-            })
-            .catch(err=>{
-                    console.log(`Error ${err}`)
-                })
-            }, [props.products, props.categories, props.categoriesSrcImg]);
-
-        useEffect(()=>{ 
             fetch("http://localhost:4000/products/?isBestseller=yes")
             .then(response=>response.json())
             .then(json=>{
@@ -80,7 +69,7 @@ const HomePage = (props) =>
                 
                 <section>
                     <h3 className="section-title">Brownse by category</h3>
-                    <CategoryList categories={props.categories} categoriesSrcImg={props.categoriesSrcImg}/>
+                    <CategoryList categories={props.categories}/>
                 </section>                
 
                 <section>

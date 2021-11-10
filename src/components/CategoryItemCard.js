@@ -6,10 +6,10 @@ const CategoryItemCard = (props) => {
         <div className = "item-card">
             <div className="">
                 <div>
-                    <img src={props.categorySrcImg} alt={props.categoryName}/>
+                    {<img src={props.categorySrcImg} alt={props.categoryName}/>}
                 </div>        
                 <p className="bold">
-                    {props.name} 
+                    {props.categoryName} 
                 </p>
             </div>
         </div>

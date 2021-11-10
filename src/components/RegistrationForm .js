@@ -1,15 +1,18 @@
-import {useState,useEffect} from 'react'
+import {useState, useEffect} from 'react'
 
 const RegistrationForm = () => 
 {
-
     const [formData, setFormData] = useState({
-        firstName : "",
-        lastName : "",
-        email: "",
-        phoneNumbers: "",
-        password: "",
-        confirmPassword : ""
+        firstName : ""
+        , lastName : ""
+        , email: ""
+        , phoneNumbers: ""
+        , password: ""
+        , confirmPassword: ""
+        , firstNameErr: ""
+        , lastNameErr: ""
+        , emailErr: ""
+        , passwordErr: ""
     });
 
     const onCreateAccount = (evt)=>{
@@ -17,23 +20,25 @@ const RegistrationForm = () =>
         evt.preventDefault();
 
         fetch("http://localhost:4000/users", {
-            method :"POST",
+            method: "POST",
             headers : {
-                "Content-Type" : "application/json"
+                "Content-Type": "application/json"
             },
-            body : JSON.stringify(formData)
+            body: JSON.stringify(formData)
         })
         .then(response=>response.json())
         .then(json=>{
-    
-              alert(json.message);
               setFormData({
-                firstName : "",
-                lastName : "",
-                email: "",
-                phoneNumbers: "",
-                password: "",
-                confirmPassword : ""
+                firstName : ""
+                , lastName : ""
+                , email: ""
+                , phoneNumbers: ""
+                , password: ""
+                , confirmPassword : ""
+                , firstNameErr: json.firstNameErr
+                , lastNameErr: json.lastNameErr
+                , emailErr: json.emailErr
+                , passwordErr: json.passwordErr
             })
     
         })
@@ -43,26 +48,28 @@ const RegistrationForm = () =>
     }
       
     return (
-        <section id="register-section">
+        <section id="register-section title">
 
         <div className= "form-container horizontal-center">
         
-            <h1>Register</h1>
+            <h3>Register</h3>
 
             <form action="" onSubmit={onCreateAccount}>
 
                 <div className="form-control">
                     <label htmlFor="firstName" className="text-left-alligned">First Name</label>
-                    <input type="text" id="firstName" value={formData.firstName}  onChange={(evt)=>{
+                    <input type="text" id="firstName" value={formData.firstName} onChange={(evt)=>{
                         setFormData({...formData, firstName : evt.target.value});
-                    }} />
+                    }}/>
+                    <span htmlFor="errorMessage" className="text-left-alligned">{formData.firstNameErr}</span>
                 </div>
 
                 <div className="form-control">
                     <label htmlFor="lastName" className="text-left-alligned">Last Name</label>
                     <input type="text" id="lastName" value={formData.lastName} onChange={(evt)=>{
                         setFormData({...formData, lastName : evt.target.value});
-                    }} />
+                    }}/>
+                    <span htmlFor="errorMessage" className="text-left-alligned">{formData.lastNameErr}</span>
                 </div>
 
                 <div className="form-control">
@@ -70,6 +77,7 @@ const RegistrationForm = () =>
                     <input type="text" id="email"  value={formData.email} onChange={(evt)=>{
                         setFormData({...formData, email : evt.target.value});
                     }}/>
+                    <span htmlFor="errorMessage" className="text-left-alligned">{formData.emailErr}</span>
                 </div>
 
                 <div className="form-control">
@@ -81,20 +89,21 @@ const RegistrationForm = () =>
 
                 <div className="form-control">
                     <label htmlFor="password" className="text-left-alligned">Password</label>
-                    <input type="text" id="password" valeu={formData.password} onChange={(evt)=>{
+                    <input type="password" id="password" value={formData.password} onChange={(evt)=>{
                         setFormData({...formData, password : evt.target.value});
                     }}/>
+                    <span htmlFor="errorMessage" className="text-left-alligned">{formData.passwordErr}</span>
                 </div>
 
                 <div className="form-control">
                     <label htmlFor="cpassword" className="text-left-alligned">Confirm Password</label>
-                    <input type="text" id="password"  value={formData.confFirmPassword} onChange={(evt)=>{
+                    <input type="password" id="cpassword"  value={formData.confirmPassword} onChange={(evt)=>{
                         setFormData({...formData, confirmPassword : evt.target.value});
                     }}/>
                 </div>
 
                 <div className="form-control">
-                    <button className="btn" type="submit">Create Account</button>
+                    <button className="btn btn-submit" type="submit">Create Account</button>
                 </div>
 
             </form>

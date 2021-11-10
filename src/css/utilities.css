@@ -75,16 +75,38 @@ h1,h2,h3
 .section-title
 {
     text-align: left;
-    margin-left: 16px;
+    margin-left: 20px;
     margin-top: 25px;
     margin-bottom: 10px;
+}
+
+.font-white
+{
+    color: white;
 }
 
 .no-decoration
 {
     text-decoration: none;
 }
-/************* END BASIC CONFIG *************/
+
+/************* BUTTONS *************/
+.btn
+{
+    display:inline-block;
+    padding:10px;
+    text-align:center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-submit
+{
+    background-color: #007bc4;
+    color:white;
+    font-size: 0.8rem;
+}
+
 
 /************* GRIDS *************/
 .grid
@@ -126,4 +148,3 @@ h1,h2,h3
 {
     grid-template-rows: 50px auto 50px;
 }
-/************* END GRIDS *************/

@@ -11,7 +11,7 @@ const ProductItemCard = (props) => {
 
             <div className = "item-content">
                 <h3 className="bold"> {props.name} </h3>
-                <p>$ {props.price} </p>
+                <p id="price" className="price">Unit price: $ {props.price} </p>
             </div>
         </div>
     )

@@ -21,11 +21,7 @@ const App = () => {
 
   const [addSliderState, setAddSliderState] = useState(true);
 
-  //this is to get the list of categories
-  const [categories, setCategories] = useState([]);
-
-  //this is to get src images
-  const [categoriesSrcImg, setCategoriesSrcImg] = useState([{}]);
+  const [categories, setCategories] = useState([{}]);
 
   const [bestsellers , setBestsellers] = useState([{}]);
 
@@ -62,7 +58,6 @@ const App = () => {
               onToogleSearchBox={toogleSearchBox} addSearchState={addSearchState} addSliderState={addSliderState} 
               products={products} setProducts={setProducts} 
               categories={categories} setCategories={setCategories}
-              categoriesSrcImg={categoriesSrcImg} setCategoriesSrcImg={setCategoriesSrcImg}
               bestsellers={bestsellers} setBestsellers={setBestsellers}
               featuredProducts={featuredProducts} setFeaturedProducts={setFeaturedProducts}
               onFilter={filterProducts}/> 
