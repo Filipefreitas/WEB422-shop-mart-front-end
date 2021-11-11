@@ -5,8 +5,7 @@ const CategoryItemCard = (props) => {
     
     return (
         <div className = "item-card">
-            {/*<Link to = {`/category/products?category="${props.id}`}>*/}
-            <Link to = {"/products?category=61750bf6a8e3398294ebbde9"}> 
+            <Link to = {`/category/products?category=${props.categoryName}`}>
                 <div>   
                     {<img src={props.categorySrcImg} alt={props.categoryName}/>}
                 </div>        

@@ -29,13 +29,6 @@ const App = (props) => {
 
   const [featuredProducts , setFeaturedProducts] = useState([{}]);
 
-  /*
-  const { search } = useLocation();
-  const searchParams = new URLSearchParams(search);
-  const category = searchParams.get("category");
-  */
-  const [productsByCategory, setProductsByCategory] = useState({})
-
   const toogleSearchBox = ()=>{
     setAddSearchState(!addSearchState)
     setAddSliderState(!addSliderState)
@@ -77,7 +70,7 @@ const App = (props) => {
         </Route>
 
         <Route exact path="/products?category={category}">
-          <ProductsCategoryPage onToogleSearchBox={toogleSearchBox} addSearchState={addSearchState} products={productsByCategory} setProducts={setProductsByCategory} onFilter={filterProducts}/>
+          <ProductsCategoryPage onToogleSearchBox={toogleSearchBox} addSearchState={addSearchState} onFilter={filterProducts}/>
         </Route>
 
         <Route exact path="/registration">

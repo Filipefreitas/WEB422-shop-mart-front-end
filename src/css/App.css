@@ -141,9 +141,11 @@ footer ul
 
 .hero-container img
 {
-    height: 100px;
-    object-fit: contain;
-    cursor: pointer ;
+  height: 100px;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
 }
 
 /************* PRODUCT DETAILS PAGE *************/
@@ -373,23 +375,25 @@ footer ul
     flex: 0 0 100%;
     background-image: url("../images/Hero_1.jpg");
     counter-increment: item;
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   
   .carousel__slide:nth-child(2) 
   {
     background-image: url("../images/Hero_2.jpg");
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   
   .carousel__slide:nth-child(3) 
   {
     background-image: url("../images/Hero_3.jpg");
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .carousel__slide:before {
-    content: counter(item);
     position: absolute;
     top: 50%;
     left: 50%;

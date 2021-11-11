@@ -12,7 +12,6 @@ const ProductList = (props) => {
                             srcImg={product.srcImg}    
                             name={product.name}
                             description={product.description} 
-                            //categoryName={product.category.categoryName}
                             isBestseller={product.isBestseller} 
                             price={product.price}/>))}
                 </div>
