@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { React, useEffect, useState } from 'react'
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
 import CategoryList from "../components/CategoryList";
 import Hero from "../components/Hero";
-
+import { useLocation } from "react-router-dom";
 
 const HomePage = (props) => 
 {   
@@ -51,7 +51,18 @@ const HomePage = (props) =>
                     console.log(`Error ${err}`)
                 })
             }, []);
-  
+
+        useEffect(()=>{ 
+            fetch("http://localhost:4000/products?category=61750bf6a8e3398294ebbde9")
+            .then(response=>response.json())
+            .then(json=>{
+                    props.setProductsByCategory(json.data)
+            })
+            .catch(err=>{
+                    console.log(`Error ${err}`)
+                })
+            }, []);
+
     return (
         <div>
             <Header 

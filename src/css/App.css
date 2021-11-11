@@ -110,7 +110,12 @@ footer ul
     overflow: hidden;
 }
 
-#price
+.card-description-price
+{
+    font-size: 16px;
+}
+
+.card-description-others
 {
     font-size: 14px;
 }

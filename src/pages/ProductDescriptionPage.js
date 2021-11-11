@@ -5,7 +5,7 @@ import {useParams} from "react-router-dom"
 
 const ProductDescriptionPage = (props) => {
 
-    const {id } = useParams();
+    const {id} = useParams();
 
     const [product, setProduct] = useState({
         name:"",
@@ -14,6 +14,7 @@ const ProductDescriptionPage = (props) => {
             categoryName: "",
             categorySrcImg: ""
         },
+        isBestseller: "",
         description:"",
         price: 0
     })
@@ -49,6 +50,8 @@ const ProductDescriptionPage = (props) => {
                             <p>{product.description}</p>
                             <p className="bold description-info">Product category</p>
                             <p>{product.category.categoryName}</p>
+                            <p className="bold description-info">Is this a bestseller?</p>
+                            <p>{product.isBestseller? "Yes" : "No"} </p>
                         </div>
                     </div>
         

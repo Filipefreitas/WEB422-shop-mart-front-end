@@ -11,7 +11,9 @@ const ProductItemCard = (props) => {
 
             <div className = "item-content">
                 <h3 className="bold"> {props.name} </h3>
-                <p id="price" className="price">Unit price: $ {props.price} </p>
+                <p id="price" className="card-description-price">Unit price: $ {props.price} </p>
+                <p id="price" className="card-description-others">Category: {props.categoryName} </p>
+                <p id="price" className="card-description-others">Bestseller: {props.isBestseller ? "Yes" : "No"} </p>
             </div>
         </div>
     )
