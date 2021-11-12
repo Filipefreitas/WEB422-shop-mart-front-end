@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react'
 
 const RegistrationForm = () => 
 {
+    const [errors, setErrors] = useState({});
+
     const [formData, setFormData] = useState({
         firstName : ""
         , lastName : ""
@@ -13,6 +15,7 @@ const RegistrationForm = () =>
         , lastNameErr: ""
         , emailErr: ""
         , passwordErr: ""
+        , success: ""
     });
 
     const onCreateAccount = (evt)=>{
@@ -39,12 +42,27 @@ const RegistrationForm = () =>
                 , lastNameErr: json.lastNameErr
                 , emailErr: json.emailErr
                 , passwordErr: json.passwordErr
-            })
-    
+                , success: json.message
+            })  
         })
+        .then((checkStatus))
         .catch(err=>{
             console.log(`Error ${err}`)
         })
+
+        function checkStatus (response) 
+        {
+            if (response.status >= 200 && response.status < 300) 
+            {
+              return response
+            }
+            else 
+            { 
+              var error = new Error(response.statusText)
+              error.response = response
+              throw error
+            }
+        }  
     }
       
     return (
@@ -53,6 +71,7 @@ const RegistrationForm = () =>
         <div className= "form-container horizontal-center">
         
             <h3>Register</h3>
+            <span htmlFor="sucessMessage" className="sucess-message">{formData.success}</span>
 
             <form action="" onSubmit={onCreateAccount}>
 
