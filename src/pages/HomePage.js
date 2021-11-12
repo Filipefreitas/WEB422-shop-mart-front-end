@@ -8,7 +8,7 @@ import Hero from "../components/Hero";
 const HomePage = (props) => 
 {   
     useEffect(()=>{ 
-        fetch("http://localhost:4000/products")
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products`)
         .then(response=>response.json())
         .then(json=>{
                 props.setProducts(json.data)
@@ -19,7 +19,7 @@ const HomePage = (props) =>
         }, []);
 
     useEffect(()=>{ 
-        fetch("http://localhost:4000/products/categories")
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/categories`)
         .then(response=>response.json())
         .then(json=>{
                 props.setCategories(json.data)
@@ -29,27 +29,27 @@ const HomePage = (props) =>
             })
         }, []);
 
-        useEffect(()=>{ 
-            fetch("http://localhost:4000/products/?isBestseller=yes")
-            .then(response=>response.json())
-            .then(json=>{
-                    props.setBestsellers(json.data)
+    useEffect(()=>{ 
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/?isBestseller=yes`)
+        .then(response=>response.json())
+        .then(json=>{
+                props.setBestsellers(json.data)
+        })
+        .catch(err=>{
+                console.log(`Error ${err}`)
             })
-            .catch(err=>{
-                    console.log(`Error ${err}`)
-                })
-            }, []);
-    
-        useEffect(()=>{ 
-            fetch("http://localhost:4000/products/?isFeatured=yes")
-            .then(response=>response.json())
-            .then(json=>{
-                    props.setFeaturedProducts(json.data)
+        }, []);
+
+    useEffect(()=>{ 
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/?isFeatured=yes`)
+        .then(response=>response.json())
+        .then(json=>{
+                props.setFeaturedProducts(json.data)
+        })
+        .catch(err=>{
+                console.log(`Error ${err}`)
             })
-            .catch(err=>{
-                    console.log(`Error ${err}`)
-                })
-            }, []);
+        }, []);
 
     return (
         <div>
